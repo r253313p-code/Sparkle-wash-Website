@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book now | SparkleWash</title><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">SparkleWash</a><nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+<a href="booking.html" aria-current="page">Book now</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</nav></header>
+<main><h1>Book your wash</h1>
+<form id="f"><label>Full name<input name="n" required></label>
+<label>Phone number<input name="p" type="tel" required></label>
+<label>Vehicle type<select name="v"><option>Small car</option><option>SUV / bakkie</option><option>Minibus</option></select></label>
+<label>Service<select name="s"><option>Express exterior</option><option>Full wash</option><option>Interior detail</option><option>Wax and polish</option><option>Engine wash</option><option>Full detail</option></select></label>
+<label>Date<input name="d" type="date" required></label>
+<label>Time<input name="t" type="time" min="07:00" max="17:00" required></label>
+<button class="btn" type="submit">Confirm booking</button></form>
+<div id="r" class="ok" role="status" hidden></div></main>
+<script>
+var f=document.getElementById('f'),r=document.getElementById('r');
+f.d.min=new Date().toISOString().split('T')[0];
+f.addEventListener('submit',function(e){e.preventDefault();
+r.textContent='Booking confirmed, '+f.n.value+'. '+f.s.value+' for your '+f.v.value+' on '+f.d.value+' at '+f.t.value+'. We will call '+f.p.value+' if anything changes.';
+r.hidden=false;f.reset();r.scrollIntoView({behavior:'smooth'});});
+</script>
+<footer>&copy; 2026 SparkleWash Car Wash. Open daily 7:00 to 18:00.</footer></body></html>
